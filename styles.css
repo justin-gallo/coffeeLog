@@ -108,6 +108,7 @@ main {
     align-items: center;
     border-radius: 10px;
     height: auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3.5px 3.5px 0.5px;
 }
 
 footer {
