@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+:root {
+    --coffee: rgb(99,72,50);
+    --darkCoffee: rgb(71, 47, 26);
+}
+
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -20,6 +25,8 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
+    z-index: 0;
 }
 
 .pageTitle {
@@ -27,13 +34,56 @@ header {
     margin: 0;
     margin-left: 30px;
     padding: 0;
-    color: black;
+    color: var(--coffee);
 }
 
 main {
     background-color: rgb(240, 238, 232);
     width: 100%;
     grid-row: 2 / 3;
+    display: grid;
+    grid-template-rows: 150px 1fr;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addCoffee {
+    width: 150px;
+    height: 50px;
+    background-color: var(--coffee);
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    border: 0px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addCoffee:hover {
+    background-color: var(--darkCoffee);
+}
+
+.cardContainer {
+    padding: 0px 50px 50px 50px;
+    display: grid;
+    grid-template-rows: repeat(2, 30vh);
+    grid-auto-rows: 30vh;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    overflow-y: scroll;
+}
+
+.coffeeCard {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: auto;
 }
 
 footer {
@@ -43,8 +93,4 @@ footer {
     justify-content: center;
     align-items: center;
     color: black;
-}
-
-footer > p {
-    font-weight: 500;
 }
