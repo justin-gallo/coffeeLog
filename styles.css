@@ -14,10 +14,14 @@ html, body {
     height: 100%;
 }
 
+/* Outermost grid layout */
+
 body {
     display: grid;
     grid-template-rows: 100px minmax(0, 1fr) 50px;
 }
+
+/* Header Styling */
 
 header {
     background-color: white;
@@ -37,6 +41,7 @@ header {
     color: var(--coffee);
 }
 
+/* Main content styling */
 main {
     background-color: rgb(240, 238, 232);
     width: 100%;
@@ -67,6 +72,8 @@ main {
 #addCoffee:hover {
     background-color: var(--darkCoffee);
 }
+
+/* Card container & grid properties */
 
 #cardContainer {
     display: grid;
