@@ -107,3 +107,19 @@ function updateIsGoodButtons() {
 }
 
 updateIsGoodButtons(); //allows buttons to have toggle functionality on first load of the page (examples)
+
+const newCoffeeSubmit = document.getElementById("newCoffeeSubmit");
+newCoffeeSubmit.onclick = function() {
+    let nameInput = document.getElementById("nameInput").value;
+    let roasterInput = document.getElementById("roasterInput").value;
+    let flavorInput = document.getElementById("flavorInput").value;
+    
+    if (document.querySelector("#isGoodInput:checked")) { //checks if "isGood" is checked
+        let isGoodInput = document.querySelector("#isGoodInput:checked").value; //sets isGoodInput to "yes"
+        addCoffeeToLog(nameInput, roasterInput, flavorInput, isGoodInput); //creates card for new coffee
+    } else {
+        addCoffeeToLog(nameInput, roasterInput, flavorInput); //creates card for new coffee, coffee is classified as "bad"
+    }
+
+    modal.style.display = "none";
+}
