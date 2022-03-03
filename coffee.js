@@ -1,6 +1,6 @@
 let myLog = [];
 
-//Create a new coffee object
+//Create a new coffee object:
 function Coffee(name, roaster, flavorProfile, goodOrBad) {
     this.name = name
     this.roaster = roaster
@@ -8,12 +8,17 @@ function Coffee(name, roaster, flavorProfile, goodOrBad) {
     this.goodOrBad = goodOrBad
 }
 
-//get info about Coffee object
-Coffee.prototype.info = function() {
-    if (this.goodOrBad === "goodCoffee") {
-        return `${this.name} by ${this.roaster}. Flavor profile: ${this.flavorProfile}. I think it's a good coffee.`;
-    } else if (this.goodOrBad === "badCoffee") {
-        return `${this.name} by ${this.roaster}. Flavor profile: ${this.flavorProfile}. I think it's a bad coffee.`;
+//Add coffee to log:
+function addCoffeeToLog(name, roaster, flavorProfile, goodOrBad) {
+    let newCoffee = new Coffee(name, roaster, flavorProfile, goodOrBad);
+    myLog.push(newCoffee);
+    return myLog;
+}
+
+//Display coffee objects as cards:
+function displayCoffeeLog(myLog) {
+    for (let i = 0; i <= myLog.length; i++) { //Loop for each coffee in myLog array
+        
     }
 }
 
