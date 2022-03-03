@@ -51,7 +51,7 @@ main {
     align-items: center;
 }
 
-.addCoffee {
+#addCoffee {
     width: 150px;
     height: 50px;
     background-color: var(--coffee);
@@ -63,7 +63,7 @@ main {
     cursor: pointer;
 }
 
-.addCoffee:hover {
+#addCoffee:hover {
     background-color: var(--darkCoffee);
 }
 
@@ -113,6 +113,8 @@ main {
     padding: 20px;
 }
 
+/* Coffee card layout styling */
+
 .name {
     margin: 0; 
     padding: 0;
@@ -145,6 +147,7 @@ main {
     cursor: pointer;
 }
 
+/* Good vs Bad Coffee button/states: */
 .goodCoffee {
     background-color: rgb(101, 218, 101);
     color: black;
@@ -172,4 +175,41 @@ footer {
     justify-content: center;
     align-items: center;
     color: black;
+}
+
+/* MODAL STYLES */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modalContent {
+    background-color: white;
+    margin: 20% auto; 
+    padding: 20px;
+    border: 0px solid white;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.closeButton {
+    color: gray;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
