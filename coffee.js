@@ -36,3 +36,20 @@ window.onclick = function(event) {
         modal.style.display = "none"
     }
 }
+
+//Script to make good/bad coffee button toggleable 
+const goodOrBadBtn = document.querySelectorAll(".goodOrBad")
+
+goodOrBadBtn.forEach(button => {
+    button.addEventListener("click", event => {
+        if (button.classList.contains("goodCoffee")) { //if current state is "good coffee"
+            button.classList.add("badCoffee"); //add badCoffee class
+            button.innerText = "Bad Coffee 👎"; //change btn text to "bad coffee 👎"
+            button.classList.remove("goodCoffee"); //remove the goodCoffee class
+        } else if (button.classList.contains("badCoffee")) { //if current state is "bad coffee"
+            button.classList.add("goodCoffee"); //add goodCoffee class
+            button.innerText = "Good Coffee 👍"; //change btn text to "good coffee 👍"
+            button.classList.remove("badCoffee"); //remove the badCoffee class
+        }
+    })
+})
