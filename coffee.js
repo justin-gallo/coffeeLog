@@ -120,6 +120,8 @@ newCoffeeSubmit.onclick = function() {
     } else {
         addCoffeeToLog(nameInput, roasterInput, flavorInput); //creates card for new coffee, coffee is classified as "bad"
     }
-
     modal.style.display = "none";
+    document.getElementById("nameInput").value = "";
+    document.getElementById("roasterInput").value = "";
+    document.getElementById("flavorInput").value = "";
 }
