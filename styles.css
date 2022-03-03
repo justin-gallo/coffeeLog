@@ -262,7 +262,7 @@ footer {
     margin-top: 16px;
 }
 
-.newCoffeeSubmit {
+#newCoffeeSubmit {
     width: 40%;
     height: 30px;
     margin-top: 16px;
@@ -273,7 +273,7 @@ footer {
     cursor: pointer;
 }
 
-.newCoffeeSubmit:hover {
+#newCoffeeSubmit:hover {
     background-color: var(--darkCoffee);
 }
 
