@@ -1,20 +1,18 @@
-//Basic object code referenced from The Odin Project's book object example. 
-function Book(title, author, pageCount, readStatus) {
-    this.title = title
-    this.author = author
-    this.pageCount = pageCount
-    this.readStatus = readStatus
+let myLog = [];
+
+function Coffee(name, roaster, flavorProfile, goodOrBad) {
+    this.name = name
+    this.roaster = roaster
+    this.flavorProfile = flavorProfile
+    this.goodOrBad = goodOrBad
 }
 
-Book.prototype.info = function() {
-    if (this.readStatus === false) {
-        return `${this.title} by ${this.author}, ${this.pageCount} pages, not read yet`;
-    } else if (this.readStatus === true) {
-        return `${this.title} by ${this.author}, ${this.pageCount} pages, already read`;
+
+
+Coffee.prototype.info = function() {
+    if (this.goodOrBad === "goodCoffee") {
+        return `${this.name} by ${this.roaster}. Flavor profile: ${this.flavorProfile}. I think it's a good coffee.`;
+    } else if (this.goodOrBad === "badCoffee") {
+        return `${this.name} by ${this.roaster}. Flavor profile: ${this.flavorProfile}. I think it's a bad coffee.`;
     }
 }
-
-const gameOfThrones = new Book('A Game of Thrones', 'George R. R. Martin', 500, false);
-
-console.log(gameOfThrones.info());
-console.log(gameOfThrones.constructor);
