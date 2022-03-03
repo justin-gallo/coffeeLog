@@ -1,25 +1,70 @@
 let myLog = [];
 
 //Create a new coffee object:
-function Coffee(name, roaster, flavorProfile, goodOrBad) {
+function Coffee(name, roaster, flavorProfile, isGood) {
     this.name = name
     this.roaster = roaster
     this.flavorProfile = flavorProfile
-    this.goodOrBad = goodOrBad
+    this.isGood = isGood
 }
 
 //Add coffee to log:
-function addCoffeeToLog(name, roaster, flavorProfile, goodOrBad) {
-    let newCoffee = new Coffee(name, roaster, flavorProfile, goodOrBad);
-    myLog.push(newCoffee);
-    return myLog;
+function addCoffeeToLog(name, roaster, flavorProfile, isGood) {
+    let newCoffee = new Coffee(name, roaster, flavorProfile, isGood); //create newCoffee object
+    myLog.push(newCoffee); //push newCoffee object to myLog Array
+    displayCoffeeLog(myLog); //display all coffee in log to DOM
+}
+
+//Select cardContainer element:
+const cardContainer = document.getElementById("cardContainer");
+
+//Function to remove all children
+function removeAllChildren(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
 
 //Display coffee objects as cards:
-function displayCoffeeLog(myLog) {
-    for (let i = 0; i <= myLog.length; i++) { //Loop for each coffee in myLog array
-        
+function displayCoffeeLog(arr) {
+    removeAllChildren(cardContainer); //Clears all cards
+
+    for (let i = 0; i < arr.length; i++) { //Loop for each coffee in myLog array
+        const card = document.createElement('div'); //create card div
+        card.classList.add('coffeeCard'); //add coffeeCard class
+        cardContainer.appendChild(card); //push new card to cardContainer
+
+        const newName = document.createElement('h3'); //create h3 for name
+        newName.classList.add('name'); //add name class
+
+        const newRoaster = document.createElement('h5'); //create h5 for roaster
+        newRoaster.classList.add('roaster'); //add roaster class
+
+        const newFlavor = document.createElement('p'); //create p for flavorProfile
+        newFlavor.classList.add('flavorProfile'); //add flavorProfile class
+
+        const newRank = document.createElement('button'); //create button for "good/bad coffee" state
+        newRank.classList.add('isGood'); //add styling for button
+
+        newName.innerText = arr[i].name; //change newName text to object's name
+        newRoaster.innerText = arr[i].roaster; //change newRoaster text to object's roaster
+        newFlavor.innerText = arr[i].flavorProfile; //change newFlavor text to object's flavor profile
+
+        if (arr[i].isGood) { //Checks if object contains the "isGood" property
+            newRank.innerText = "Good Coffee 👍";
+            newRank.classList.add("goodCoffee");
+        } else {
+            newRank.innerText = "Bad Coffee 👎";
+            newRank.classList.add("badCoffee");
+        }
+
+        card.appendChild(newName); //push newName to card
+        card.appendChild(newRoaster); //push newRoaster to card
+        card.appendChild(newFlavor); //push newFlavor to card
+        card.appendChild(newRank); //push newRank to card
     }
+    
+    updateIsGoodButtons(); //Updates the list of Good/Bad buttons on the page and re-assigns click events
 }
 
 //Modal Script://
@@ -42,19 +87,23 @@ window.onclick = function(event) {
     }
 }
 
-//Script to make good/bad coffee button toggleable 
-const goodOrBadBtn = document.querySelectorAll(".goodOrBad")
+function updateIsGoodButtons() {
+    //Script to make good/bad coffee button toggleable 
+    let isGoodBtn = document.querySelectorAll(".isGood");
 
-goodOrBadBtn.forEach(button => {
-    button.addEventListener("click", event => {
-        if (button.classList.contains("goodCoffee")) { //if current state is "good coffee"
-            button.classList.add("badCoffee"); //add badCoffee class
-            button.innerText = "Bad Coffee 👎"; //change btn text to "bad coffee 👎"
-            button.classList.remove("goodCoffee"); //remove the goodCoffee class
-        } else if (button.classList.contains("badCoffee")) { //if current state is "bad coffee"
-            button.classList.add("goodCoffee"); //add goodCoffee class
-            button.innerText = "Good Coffee 👍"; //change btn text to "good coffee 👍"
-            button.classList.remove("badCoffee"); //remove the badCoffee class
-        }
+    isGoodBtn.forEach(button => {
+        button.addEventListener("click", event => {
+            if (button.classList.contains("goodCoffee")) { //if current state is "good coffee"
+                button.classList.add("badCoffee"); //add badCoffee class
+                button.innerText = "Bad Coffee 👎"; //change btn text to "bad coffee 👎"
+                button.classList.remove("goodCoffee"); //remove the goodCoffee class
+            } else if (button.classList.contains("badCoffee")) { //if current state is "bad coffee"
+                button.classList.add("goodCoffee"); //add goodCoffee class
+                button.innerText = "Good Coffee 👍"; //change btn text to "good coffee 👍"
+                button.classList.remove("badCoffee"); //remove the badCoffee class
+            }
+        })
     })
-})
+}
+
+updateIsGoodButtons(); //allows buttons to have toggle functionality on first load of the page (examples)
