@@ -12,3 +12,4 @@ Developed to practice working with Objects & Constructors in JavaScript.
 ###*Features to Add*
 * Remove button to each card to remove that respective coffee object.
 * Wrap input fields in a <form> tag to allow for validation methods to be used (such as maximum character counts).
+* Animate the opening/closing of the modal element.
