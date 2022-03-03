@@ -15,14 +15,7 @@
         <div class="buttonContainer">
             <button id="addCoffee">+ add coffee</button>
         </div>
-        <div id="cardContainer">
-            <div class="coffeeCard">
-                <h3 class="name">Yukon Blend</h3>
-                <h5 class="roaster">Starbucks</h5>
-                <p class="flavorProfile">Lively acidity and deep, earthy notes.</p>
-                <button class="isGood goodCoffee">Good Coffee 👍</button>
-            </div>
-        </div>
+        <div id="cardContainer"></div>
         <div id="newCoffeeModal" class="modal">
             <div class="modalContent">
                 <span class="closeButton">&times;</span>
@@ -31,12 +24,12 @@
                 <input type="text" id="roasterInput" placeholder="roaster">
                 <input type="text" id="flavorInput" placeholder="flavor profile">
                 <div class="inputRow">
-                    <label for="isGood">
+                    <label for="isGoodInput">
                         <span>did you like it?</span>
-                        <input type="checkbox" id="isGood" value="yes">
+                        <input type="checkbox" id="isGoodInput" value="yes">
                     </label>
                 </div>
-                <button class="newCoffeeSubmit">Submit</button>
+                <button id="newCoffeeSubmit">Submit</button>
             </div>
         </div>
     </main>
