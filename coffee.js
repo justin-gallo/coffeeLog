@@ -124,4 +124,5 @@ newCoffeeSubmit.onclick = function() {
     document.getElementById("nameInput").value = "";
     document.getElementById("roasterInput").value = "";
     document.getElementById("flavorInput").value = "";
+    document.querySelector("#isGoodInput").checked = false;
 }
