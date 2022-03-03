@@ -201,24 +201,74 @@ footer {
 }
 
 .modalContent {
-    background-color: white;
-    margin: 20% auto; 
+    background-color: rgb(240, 238, 232);
+    margin: 150px auto; 
     padding: 20px;
     border: 0px solid white;
     border-radius: 10px;
-    width: 50%;
+    width: 220px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .closeButton {
     color: gray;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    align-self: flex-end;
+    margin-top: -10px;
 }
 
 .closeButton:hover,
 .closeButton:focus {
     color: black;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.modalContent > h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+    color: var(--coffee);
+}
+
+.modalContent > input {
+    width: 85%;
+    height: 30px;
+    margin-bottom: 10px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.modalContent > input:focus {
+    border: 3px solid var(--coffee);
+    outline: none;
+}
+
+.inputRow {
+    margin-top: 16px;
+}
+
+.newCoffeeSubmit {
+    width: 40%;
+    height: 30px;
+    margin-top: 16px;
+    border: none;
+    background-color: var(--coffee);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newCoffeeSubmit:hover {
+    background-color: var(--darkCoffee);
+}
+
+input[type="checkbox"] {
     cursor: pointer;
 }
