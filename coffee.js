@@ -58,13 +58,19 @@ function displayCoffeeLog(arr) {
             newRank.classList.add("badCoffee");
         }
 
+        const deleteBtn = document.createElement('button'); //create delete button element
+        deleteBtn.classList.add("deleteBtn"); //add deleteBtn class to element
+        deleteBtn.innerText = "Delete Coffee";
+
         card.appendChild(newName); //push newName to card
         card.appendChild(newRoaster); //push newRoaster to card
         card.appendChild(newFlavor); //push newFlavor to card
         card.appendChild(newRank); //push newRank to card
+        card.appendChild(deleteBtn); //push deleteBtn to card
     }
-    
+
     updateIsGoodButtons(); //Updates the list of Good/Bad buttons on the page and re-assigns click events
+    updateDeleteBtns(); //Updates the list of delete buttons
 }
 
 //Modal Script://
@@ -109,6 +115,7 @@ function updateIsGoodButtons() {
 updateIsGoodButtons(); //allows buttons to have toggle functionality on first load of the page (examples)
 
 const newCoffeeSubmit = document.getElementById("newCoffeeSubmit");
+
 newCoffeeSubmit.onclick = function() {
     let nameInput = document.getElementById("nameInput").value;
     let roasterInput = document.getElementById("roasterInput").value;
@@ -125,4 +132,23 @@ newCoffeeSubmit.onclick = function() {
     document.getElementById("roasterInput").value = "";
     document.getElementById("flavorInput").value = "";
     document.querySelector("#isGoodInput").checked = false;
+}
+
+function deleteCoffee(array, index) {
+    for (let i = 0; i < array.length; i++) {
+        if (i === index) {
+            array.splice(index, 1);
+        }
+    }
+    return array;
+}
+
+function updateDeleteBtns() {
+    const deleteBtns = document.getElementsByClassName("deleteBtn");
+    for (let i = 0; i < deleteBtns.length; i++) {
+        deleteBtns[i].addEventListener("click", function() {
+            deleteCoffee(myLog, i);
+            displayCoffeeLog(myLog);
+        })
+    }
 }
