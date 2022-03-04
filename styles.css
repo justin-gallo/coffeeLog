@@ -125,7 +125,7 @@ main {
     border-radius: 10px;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3.5px 3.5px 0.5px;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* Coffee card layout styling */
@@ -148,6 +148,7 @@ main {
     margin-top: 10px;
     padding: 0;
     text-align: center;
+    font-size: 13px;
 }
 
 .isGood {
@@ -157,7 +158,7 @@ main {
     border: 0px solid black;
     border-radius: 10px;
     background-color: var(--coffee);
-    width: 120px;
+    width: 60%;
     height: 35px;
     color: white;
     cursor: pointer;
@@ -288,7 +289,7 @@ input[type="checkbox"] {
     border: 0px solid black;
     border-radius: 10px;
     background-color: var(--coffee);
-    width: 120px;
+    width: 60%;
     height: 35px;
     color: white;
     cursor: pointer;
