@@ -152,3 +152,5 @@ function updateDeleteBtns() {
         })
     }
 }
+
+addCoffeeToLog("Gravitas Blend", "Starbucks Reserve", "Pomegranate, persimmon and baking chocolate.", "yes"); //Example card on first page load
