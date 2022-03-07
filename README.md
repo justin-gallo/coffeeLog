@@ -2,6 +2,8 @@
 A simple app to track &amp; rate different types of coffee. 
 Developed to practice working with Objects & Constructors in JavaScript. 
 
+#### [Live Preview](https://justin-gallo.github.io/coffeeLog/)
+
 ### *Things I Learned*
 * How to implement modal elements which are hideable with button presses. 
 * Changing CSS properties via Javascript. 
