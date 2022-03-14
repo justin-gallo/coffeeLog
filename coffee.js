@@ -1,11 +1,13 @@
 let myLog = [];
 
 //Create a new coffee object:
-function Coffee(name, roaster, flavorProfile, isGood) {
-    this.name = name
-    this.roaster = roaster
-    this.flavorProfile = flavorProfile
-    this.isGood = isGood
+class Coffee {
+    constructor(name, roaster, flavorProfile, isGood) {
+        this.name = name
+        this.roaster = roaster
+        this.flavorProfile = flavorProfile
+        this.isGood = isGood
+    }
 }
 
 //Add coffee to log:
